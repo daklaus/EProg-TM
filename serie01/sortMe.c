@@ -12,28 +12,28 @@ int main(int argc, char** argv)
 	printf("Insert number c: ");
 	scanf("%lf", &c);
 	
-	if(a >= b)
+	if(a <= b)
 	{
-		if(b >= c)
-			printf("Ordered sequence: %d, %d, %d\n", a, b, c);
+		if(b <= c)
+			printf("Ordered sequence: %f, %f, %f\n", a, b, c);
 		else
 		{
-			if(a >= c)
-				printf("Ordered sequence: %d, %d, %d\n", a, c, b);
+			if(a <= c)
+				printf("Ordered sequence: %f, %f, %f\n", a, c, b);
 			else
-				printf("Ordered sequence: %d, %d, %d\n", c, a, b);
+				printf("Ordered sequence: %f, %f, %f\n", c, a, b);
 		}
 	}
 	else
 	{
-		if(b < c)
-			printf("Ordered sequence: %d, %d, %d\n", c, b, a);
+		if(b >= c)
+			printf("Ordered sequence: %f, %f, %f\n", c, b, a);
 		else
 		{
-			if(a >= c)
-				printf("Ordered sequence: %d, %d, %d\n", b, a, c);
+			if(a <= c)
+				printf("Ordered sequence: %f, %f, %f\n", b, a, c);
 			else
-				printf("Ordered sequence: %d, %d, %d\n", b, c, a);
+				printf("Ordered sequence: %f, %f, %f\n", b, c, a);
 		}
 	}
 
