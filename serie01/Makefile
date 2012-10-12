@@ -10,19 +10,19 @@ CC=gcc
 
 
 kreis: kreis.c
-	$(CC) $(FLAGS) -o kreis kreis.c $(LFLAGS)
+	$(CC) $(CFLAGS) -o kreis kreis.c $(LFLAGS)
 
 sortMe: sortMe.c
-	$(CC) $(FLAGS) -o sortMe sortMe.c $(LFLAGS)
+	$(CC) $(CFLAGS) -o sortMe sortMe.c $(LFLAGS)
 
 folgenglied: folgenglied.c
-	$(CC) $(FLAGS) -o folgenglied folgenglied.c $(LFLAGS)
+	$(CC) $(CFLAGS) -o folgenglied folgenglied.c $(LFLAGS)
 
 kugel: kugel.c
-	$(CC) $(FLAGS) -o kugel kugel.c $(LFLAGS)
+	$(CC) $(CFLAGS) -o kugel kugel.c $(LFLAGS)
 
 a1: a1.c
-	$(CC) $(FLAGS) -o a1 a1.c $(LFLAGS)
+	$(CC) $(CFLAGS) -o a1 a1.c $(LFLAGS)
 
 
 clean:
