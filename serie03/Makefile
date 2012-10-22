@@ -24,8 +24,18 @@ pol2cart: pol2cart.c
 kapital: kapital.c
 	$(CC) $(CFLAGS) -o kapital kapital.c $(LFLAGS)
 
+plotRectangle: plotRectangle.c
+	$(CC) $(CFLAGS) -o plotRectangle plotRectangle.c $(LFLAGS)
+
+spiel: spiel.c
+	$(CC) $(CFLAGS) -o spiel spiel.c $(LFLAGS)
+
+hanoi: hanoi.c
+	$(CC) $(CFLAGS) -o hanoi hanoi.c $(LFLAGS)
+
 
 clean:
 	rm -f *.o geometricMean fibonacci mvmultiplication pol2cart kapital
+	rm -f *.o plotRectangle spiel hanoi
 
 .PHONY: clean

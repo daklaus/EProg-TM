@@ -18,10 +18,11 @@ int main(int argc, char** argv)
 	scanf("%lf", &p);
 	printf("Input n: ");
 	scanf("%d", &n);
+	printf("\n");
 
 	endkapital(x, p, n);
 
-	printf("Input x_max: ");
+	printf("\nInput x_max: ");
 	scanf("%lf", &x_max);
 
 	laufzeit(x, p, x_max);
@@ -31,18 +32,31 @@ int main(int argc, char** argv)
 
 void endkapital(double x, double p, int n)
 {
-	double tmp=0;
+	double tmp=x;
 	int i=0;
 
-	printf("Jahr\tKapital\n");
-	printf("====\t=======\n");
+	if(x < 0)
+		return;
 
+	printf("Jahr  Kapital\n");
+	printf("====  =======\n");
+
+	printf("%4d  %.2f\n", i, tmp);
 	for(i=0; i<n; i++)
 	{
-		
+		tmp = tmp * (1 + p / 100);
+		printf("%4d  %.2f\n", i+1, tmp);
 	}
 }
 
-double laufzeit(double x, double p, double x_max)
+/*
+ * Grundgleichung: x_max = x * (1 + p/100)^n
+ * Umgeformt: n = ln(x_max/x)/ln(1 + p/100)
+ */
+void laufzeit(double x, double p, double x_max)
 {
+	if(p == 0 || x == 0)
+		return;	
+
+	printf("Kapital erreicht in %.2f Jahren!\n", log(x_max/x)/log(1 + p/100));
 }
