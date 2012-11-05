@@ -12,8 +12,11 @@ CC=gcc
 powN: powN.c
 	$(CC) $(CFLAGS) -o powN powN.c $(LFLAGS)
 
+diffpol: diffpol.c
+	$(CC) $(CFLAGS) -o diffpol diffpol.c $(LFLAGS)
+
 
 clean:
-	rm -f *.o powN
+	rm -f *.o powN diffpol
 
 .PHONY: clean
