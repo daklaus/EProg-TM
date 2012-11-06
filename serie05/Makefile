@@ -15,8 +15,14 @@ powN: powN.c
 diffpol: diffpol.c
 	$(CC) $(CFLAGS) -o diffpol diffpol.c $(LFLAGS)
 
+frobeniusnorm: frobeniusnorm.c
+	$(CC) $(CFLAGS) -o frobeniusnorm frobeniusnorm.c $(LFLAGS)
+
+sin: sin.c
+	$(CC) $(CFLAGS) -o sin sin.c $(LFLAGS)
+
 
 clean:
-	rm -f *.o powN diffpol
+	rm -f *.o powN diffpol frobeniusnorm sin
 
 .PHONY: clean

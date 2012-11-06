@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 {
 	double x[DIM];
 	
-	printf("Input the vector of the coefficients x[%d]:\n", DIM;
+	printf("Input the vector of the coefficients x[%d]:\n", DIM);
 	scanvector(x, DIM);
 	
 	diffpol(x, DIM);
