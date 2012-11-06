@@ -3,7 +3,7 @@
 #include <math.h>
 
 
-int fact(int x);
+unsigned long int fact(unsigned long int x);
 
 double sin_(double x, double epsilon);
 
@@ -42,7 +42,7 @@ int main(int argc, char** argv)
 
 double sin_(double x, double epsilon)
 {
-	double sum=0, lastSum=0;
+	long double sum=0, lastSum=0;
 	int k=0;
 
 	if(epsilon <= 0)
@@ -50,17 +50,18 @@ double sin_(double x, double epsilon)
 	
 	do {
 		lastSum = sum;
-		sum += pow(-1, k) * pow(x, 2*k+1) / fact(2*k+1);
+		sum += powl(-1, k) * powl(x, 2*k+1) / fact(2*k+1);
 
 		k++;
-	} while(fabs(sum-lastSum)/fabs(sum) > epsilon && fabs(sum) > epsilon);
+	} while(fabsl(sum-lastSum)/fabsl(sum) > epsilon && fabsl(sum) > epsilon);
 
 	return sum;
 }
 
-int fact(int x)
+unsigned long int fact(unsigned long int x)
 {
-	int i=2, fact=1;
+	unsigned long int fact=1;
+	int i=2;
 	for (; i<=x; i++) {
 		fact *= i;
 	}

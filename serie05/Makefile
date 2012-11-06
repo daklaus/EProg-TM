@@ -4,7 +4,7 @@
 #date 19.10.2012
 
 
-CFLAGS=-g -ansi -pedantic -Wall
+CFLAGS=-g -ansi -pedantic -Wall -D_XOPEN_SOURCE=600
 LFLAGS=-lm
 CC=gcc
 
