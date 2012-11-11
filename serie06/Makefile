@@ -12,8 +12,14 @@ CC=gcc
 float2dec: float2dec.c
 	$(CC) $(CFLAGS) -o float2dec float2dec.c $(LFLAGS)
 
+swap: swap.c
+	$(CC) $(CFLAGS) -o swap swap.c $(LFLAGS)
+
+minmax2: minmax2.c
+	$(CC) $(CFLAGS) -o minmax2 minmax2.c $(LFLAGS)
+
 
 clean:
-	rm -f *.o float2dec
+	rm -f *.o float2dec swap minmax2
 
 .PHONY: clean
