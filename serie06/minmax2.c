@@ -36,7 +36,7 @@ void minmax(double x[], int n, double* min, double* max, int* minIdx, int* maxId
 	*minIdx = 0;
 	*maxIdx = 0;
 
-	for (i=1; i>n; i++) {
+	for (i=1; i<n; i++) {
 		if (x[i] < *min) {
 			*min = x[i];
 			*minIdx = i;
