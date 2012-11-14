@@ -18,8 +18,11 @@ swap: swap.c
 minmax2: minmax2.c
 	$(CC) $(CFLAGS) -o minmax2 minmax2.c $(LFLAGS)
 
+dec2float: dec2float.c
+	$(CC) $(CFLAGS) -o dec2float dec2float.c $(LFLAGS)
+
 
 clean:
-	rm -f *.o float2dec swap minmax2
+	rm -f *.o float2dec swap minmax2 dec2float
 
 .PHONY: clean
