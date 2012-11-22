@@ -1,62 +1,86 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <limits.h>
 
 
 int* scanvector(int n);
 
 void printvector(int x[], int n);
 
-int* unique(int x[], int n);
+int* unique(int x[], int* n);
 
 
 int main(int argc, char** argv)
 {
 	int n=0;
-	int* array;
+	int* aIn;
+	int* aOut;
 
 	printf("Input the size of the array: ");
 	scanf("%d", &n);
-	printf("Input the array[%d]: ", n);
-	array = scanvector(n);
+	printf("Input the array[%d]:\n", n);
+	aIn = scanvector(n);
 
-	array = unique(array, &n);
+	aOut = unique(aIn, &n);
+	if(aIn != aOut)
+		free(aIn);
 
 	printf("Sorted and unique array is:\n");
-	printvector(array, n);
+	printvector(aOut, n);
 
-	free(array);
+	free(aOut);
 
 	return EXIT_SUCCESS;
 }
 
 int* unique(int x[], int* n)
 {
-	int i=0, curMinIdx=0;
-	int newN=1;
-	int* y;
+	int i=0, newN=1, lowerBound=0, curMin=0;
+	int* y = NULL;
+	unsigned char foundMin=0;
 
 	if(*n <= 0)
 		return x;
 
-	y = (int*) malloc(sizeof(int));
-	y[0] = x[0];
+	lowerBound = INT_MIN;
 	
-	curMinIdx=0;
-	for(i=0; i<*n; i++) {
-	}
+	do {
+		foundMin = 0;
+		curMin = INT_MAX;
 
-	return NULL;
+		for(i=0; i<*n; i++) {
+			if(x[i] <= curMin && x[i] > lowerBound) {
+				curMin = x[i];
+				foundMin = 1;
+			}
+		}
+
+		if(foundMin) {
+			lowerBound = curMin;
+			y = (int*) realloc(y, newN);
+			y[newN-1] = curMin;
+			newN++;
+		}
+	} while(foundMin);
+
+	/* Because at the end of the loop y is one too big */
+	y = (int*) realloc(y, --newN);
+
+	*n = newN;
+
+	return y;
 }
 
 int* scanvector(int n)
 {
 	int i = 0;
+	int* x;
 
 	if(n < 0)
 		n = 0;
 
-	int* x = (int*) calloc(n, sizeof(int));
+	x = (int*) calloc(n, sizeof(int));
 
 	for(i=0; i<n; i++) {
 		x[i] = 0;
