@@ -5,32 +5,29 @@
 using namespace std;
 
 struct SMatrix {
-	SMatrix (int initM, int initN) {
-		m = initM < 0 ? 0 : initM;
+	SMatrix (int initN) {
 		n = initN < 0 ? 0 : initN;
-		entry = vector<double>(m*n);
+		rowindex = vector<int>();
+		colindex = vector<int>();
+		value = vector<double>();
 	}
-	int m;
 	int n;
-	vector<double> entry;
+	vector<int> rowindex;
+	vector<int> colindex;
+	vector<double> value;
 };
 
 /*
  * Memory allocation and initialization of
- * a dynamic double matrix of length m by n
+ * a dynamic double matrix of length n by n
  */
-SMatrix* newSMatrix(int m, int n);
+SMatrix* newSMatrix(int n);
 
 /*
  * Free a dynamic matrix of arbitrary length and
  * set the pointer to NULL
  */
 SMatrix* delSMatrix(SMatrix* matrix);
-
-/*
- * Get the dimension M of the matrix
- */
-int getMatrixM(SMatrix* matrix);
 
 /*
  * Get the dimension N of the matrix
