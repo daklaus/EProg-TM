@@ -1,6 +1,6 @@
 #define DIM_M (3)
-#define DIM_N (2)
-#define DIM_O (2)
+#define DIM_N (3)
+#define DIM_O (3)
 
 #include <stdio.h>
 #include <stdlib.h>
