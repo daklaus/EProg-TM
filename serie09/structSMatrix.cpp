@@ -6,6 +6,9 @@ SMatrix* newSMatrix(int n) {
 }
 
 SMatrix* delSMatrix(SMatrix* matrix) {
+	delete matrix->rowindex;
+	delete matrix->colindex;
+	delete matrix->values;
 	delete matrix;
 
 	return NULL;

@@ -7,14 +7,14 @@ using namespace std;
 struct SMatrix {
 	SMatrix (int initN) {
 		n = initN < 0 ? 0 : initN;
-		rowindex = vector<int>();
-		colindex = vector<int>();
-		value = vector<double>();
+		rowindex = new vector<int>();
+		colindex = new vector<int>();
+		value = new vector<double>();
 	}
 	int n;
-	vector<int> rowindex;
-	vector<int> colindex;
-	vector<double> value;
+	vector<int>* rowindex;
+	vector<int>* colindex;
+	vector<double>* value;
 };
 
 /*
