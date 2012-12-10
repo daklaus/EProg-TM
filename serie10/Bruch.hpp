@@ -9,10 +9,13 @@
 #define BRUCH_H_
 
 #include <iostream>
-#include <exception>
-#include <cstdlib>
 #include <string>
-#include <sstream>
+#include <algorithm>
+#include <functional>
+#include <cctype>
+#include <locale>
+#include <iterator>
+#include <cstdlib>
 #include <cmath>
 
 using namespace std;

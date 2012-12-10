@@ -7,13 +7,13 @@ CFLAGS=-g -ansi -pedantic -Wall #-D_XOPEN_SOURCE=700
 LFLAGS=#-lm
 CC=g++
 
-all: Bruch.o bruchTest
-
-Bruch.o: Bruch.cpp Bruch.hpp
-	$(CC) -c $(CFLAGS) Bruch.cpp
+all: bruchTest
 
 bruchTest: bruchTest.cpp Bruch.o
 	$(CC) $(CFLAGS) -o bruchTest bruchTest.cpp $(LFLAGS) Bruch.o
+
+Bruch.o: Bruch.cpp Bruch.hpp
+	$(CC) -c $(CFLAGS) Bruch.cpp
 
 clean:
 	rm -f *.o bruchTest

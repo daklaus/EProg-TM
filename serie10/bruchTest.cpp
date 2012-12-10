@@ -10,14 +10,21 @@ int main(int argc, char** argv) {
 	Bruch* b = new Bruch();
 	string sIn;
 
-	b->setNenner(2);
-	b->setZaehler(3);
-	cout << "2/3 = " << b->getWert() << endl;
+	b->setNenner(8);
+	b->setZaehler(2);
+	cout << b->getZaehler() << " / " << b->getNenner() << " = " << b->getWert()
+			<< endl;
 
-	getline(cin , sIn);
+	cout << "kürzen..." << endl;
+	b->kuerzen();
+	cout << b->getZaehler() << " / " << b->getNenner() << " = " << b->getWert()
+			<< endl;
 
+	cout << "String zur Umwandlung: ";
+	getline(cin, sIn);
 	b->setWert(sIn);
-	cout << "Neuer wert: " << b->getWert() << endl;
+	cout << b->getZaehler() << " / " << b->getNenner() << " = " << b->getWert()
+			<< endl;
 
 	delete b;
 }
