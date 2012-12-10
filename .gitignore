@@ -1,3 +1,10 @@
+# Eclipse Project Files #
+.cproject
+.project
+.classpath
+.settings/
+.externalToolBuilders/
+
 # VIM swp files
 *.swp
 
