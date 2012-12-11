@@ -49,7 +49,7 @@ void Bruch::setWert(string wert) {
 	/*
 	 * Prepare the string
 	 */
-	wert = trim(wert);
+	trim(wert);
 	// Erase everthing after the first floating point number
 	wert.erase(
 			find_if(wert.begin(), wert.end(),

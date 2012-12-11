@@ -5,8 +5,8 @@
  *      Author: klaus
  */
 
-#ifndef BRUCH_H_
-#define BRUCH_H_
+#ifndef BRUCH_HPP_
+#define BRUCH_HPP_
 
 #include <iostream>
 #include <string>
@@ -14,7 +14,6 @@
 #include <functional>
 #include <cctype>
 #include <locale>
-#include <iterator>
 #include <cstdlib>
 #include <cmath>
 
@@ -35,4 +34,4 @@ public:
 	long getZaehler() const;
 };
 
-#endif /* BRUCH_H_ */
+#endif /* BRUCH_HPP_ */
