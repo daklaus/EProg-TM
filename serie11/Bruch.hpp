@@ -40,6 +40,11 @@ public:
 	Bruch operator -(const Bruch& rhs) const;
 	Bruch operator *(const Bruch& rhs) const;
 	Bruch operator /(const Bruch& rhs) const;
+	Bruch operator <(const Bruch& rhs) const;
+	Bruch operator <=(const Bruch& rhs) const;
+	Bruch operator >(const Bruch& rhs) const;
+	Bruch operator >=(const Bruch& rhs) const;
+	operator double() const;
 };
 
 #endif /* BRUCH_HPP_ */

@@ -33,4 +33,24 @@ int main(int argc, char** argv) {
 
 	delete b1;
 	delete b2;
+
+	cout << endl << "Bruch Vergleiche:" << endl;
+
+	b1 = new Bruch(1, 3);
+	b2 = new Bruch(1, 2);
+
+	cout << "Wert von " << b1->toString() << ": " << (double) *b1 << endl;
+	cout << "Wert von " << b2->toString() << ": " << (double) *b2 << endl;
+
+	if (*b1 < *b2)
+		cout << b1->toString() << " < " << b2->toString() << endl;
+	if (*b1 <= *b2)
+		cout << b1->toString() << " <= " << b2->toString() << endl;
+	if (*b1 > *b2)
+		cout << b1->toString() << " > " << b2->toString() << endl;
+	if (*b1 >= *b2)
+		cout << b1->toString() << " >= " << b2->toString() << endl;
+
+	delete b1;
+	delete b2;
 }

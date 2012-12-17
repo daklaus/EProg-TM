@@ -126,6 +126,26 @@ Bruch Bruch::operator /(const Bruch& rhs) const {
 	return ret;
 }
 
+Bruch Bruch::operator <(const Bruch& rhs) const {
+	return (double) *this < (double) rhs;
+}
+
+Bruch Bruch::operator <=(const Bruch& rhs) const {
+	return (double) *this <= (double) rhs;
+}
+
+Bruch Bruch::operator >(const Bruch& rhs) const {
+	return (double) *this > (double) rhs;
+}
+
+Bruch Bruch::operator >=(const Bruch& rhs) const {
+	return (double) *this >= (double) rhs;
+}
+
+Bruch::operator double() const {
+	return this->getWert();
+}
+
 /*
  * Static functions
  */
