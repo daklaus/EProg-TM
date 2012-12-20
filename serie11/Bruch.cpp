@@ -71,7 +71,7 @@ void Bruch::setWert(string wert) {
 		exp = 0;
 	}
 
-	this->nenner = pow((unsigned long) 10, exp);
+	this->nenner = static_cast<unsigned long>(pow(10., (double) exp));
 	this->zaehler = strtoul(wert.c_str(), endPtr, 10);
 }
 
