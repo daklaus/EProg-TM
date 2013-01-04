@@ -7,17 +7,11 @@ CFLAGS=-g -ansi -pedantic -Wall #-D_XOPEN_SOURCE=700
 LFLAGS=#-lm
 CC=g++
 
-all: Person.o Student.o Arbeiter.o
+all: personTest
 
 
-bruchTest: bruchTest.cpp Bruch.o
-	$(CC) $(CFLAGS) -o bruchTest bruchTest.cpp $(LFLAGS) Bruch.o
-	
-realVectorTest: realVectorTest.cpp RealVector.o
-	$(CC) $(CFLAGS) -o realVectorTest realVectorTest.cpp $(LFLAGS) RealVector.o
-	
-frobeniusnorm: frobeniusnorm.cpp RealVector.o
-	$(CC) $(CFLAGS) -o frobeniusnorm frobeniusnorm.cpp $(LFLAGS) RealVector.o
+personTest: personTest.cpp Student.o Arbeiter.o Person.o
+	$(CC) $(CFLAGS) -o personTest personTest.cpp $(LFLAGS) Person.o Student.o Arbeiter.o
 	
 	
 Person.o: Person.cpp Person.hpp
@@ -31,6 +25,6 @@ Arbeiter.o: Arbeiter.cpp Arbeiter.hpp
 	
 
 clean:
-	rm -f *.o 
+	rm -f *.o personTest
 
 .PHONY: clean
