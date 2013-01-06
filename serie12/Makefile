@@ -1,6 +1,6 @@
 #file Makefile
 #author Klaus Krapfenbauer MatrNr.:0926457
-#brief Makefile for EProg TM serie10
+#brief Makefile for EProg TM serie12
 #date 04.01.2013
 
 CFLAGS=-g -ansi -pedantic -Wall #-D_XOPEN_SOURCE=700
