@@ -19,6 +19,9 @@ stoppuhrTest: stoppuhrTest.cpp Stoppuhr.o
 squareMatrixTest: squareMatrixTest.cpp Matrix.o SquareMatrix.o
 	$(CC) $(CFLAGS) -o squareMatrixTest squareMatrixTest.cpp $(LFLAGS) Matrix.o SquareMatrix.o
 	
+fact: fact.cpp
+	$(CC) $(CFLAGS) -o fact fact.cpp $(LFLAGS)
+	
 	
 Person.o: Person.cpp Person.hpp
 	$(CC) -c $(CFLAGS) Person.cpp
@@ -40,6 +43,6 @@ SquareMatrix.o: SquareMatrix.cpp SquareMatrix.hpp Matrix.hpp
 	
 
 clean:
-	rm -f *.o personTest stoppuhrTest squareMatrixTest
+	rm -f *.o personTest stoppuhrTest squareMatrixTest fact
 
 .PHONY: clean
